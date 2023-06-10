@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #loginContainer,
+    #chatContainer {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #chatMessages {
+      margin-top: 20px;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    #chatMessages li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="loginContainer">
+    <h1>Login</h1>
+    <form id="loginForm" action="/login" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="chatContainer" style="display: none;">
+    <h1>Group Chat</h1>
+    <form id="messageForm" action="/message" method="POST">
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message" required>
+      <button type="submit">Send</button>
+    </form>
+
+    <ul id="chatMessages"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
